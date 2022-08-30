@@ -18,6 +18,14 @@ export default new Vuex.Store({
     toggleSticker(state, sticker) {
       sticker.status = !sticker.status;
     },
+    addSticker(state, sticker) {
+      sticker.status++;
+    },
+    removeSticker(state, sticker) {
+      if (sticker.status > 0) {
+        sticker.status--;
+      }
+    },
     clearStickers(state) {
       state.stickers.forEach(sticker => sticker.status = 0);
     },
@@ -44,6 +52,14 @@ export default new Vuex.Store({
   actions: {
     toggleSticker({ commit }, sticker) {
       commit('toggleSticker', sticker);
+      commit('persist');
+    },
+    addSticker({ commit }, sticker) {
+      commit('addSticker', sticker);
+      commit('persist');
+    },
+    removeSticker({ commit }, sticker) {
+      commit('removeSticker', sticker);
       commit('persist');
     },
     clearStickers({ commit }) {

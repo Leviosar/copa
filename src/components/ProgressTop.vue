@@ -23,7 +23,7 @@ export default {
   computed: {
     value() {
       let stickers = this.$store.state.stickers;
-      return ((stickers.filter(sticker => sticker.status == 1).length / stickers.length) * 100).toFixed(2);
+      return ((stickers.filter(sticker => sticker.status > 0).length / stickers.length) * 100).toFixed(2);
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <v-row class="sticker-list">
-    <v-col cols="12" md="2" v-for="sticker in stickers" :key="sticker.code">
+    <v-col cols="12" md="3" v-for="sticker in stickers" :key="sticker.code">
       <Sticker :sticker="sticker"/>
     </v-col>
   </v-row>
