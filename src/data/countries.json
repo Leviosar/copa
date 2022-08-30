@@ -1,0 +1,208 @@
+{
+    "en": [
+        {
+            "id": 0,
+            "name": "FIFA",
+            "abbrev": "FWC",
+            "iso": ""
+        },
+        {
+            "id": 1,
+            "name": "Qatar",
+            "abbrev": "QAT",
+            "iso": "qa"
+        },
+        {
+            "id": 2,
+            "name": "Ecuador",
+            "abbrev": "ECU",
+            "iso": "ec"
+        },
+        {
+            "id": 3,
+            "name": "Senegal",
+            "abbrev": "SEN",
+            "iso": "sn"
+        },
+        {
+            "id": 4,
+            "name": "Netherlands",
+            "abbrev": "NED",
+            "iso": "nl"
+        },
+        {
+            "id": 5,
+            "name": "England",
+            "abbrev": "ENG",
+            "iso": "gb-eng"
+        },
+        {
+            "id": 6,
+            "name": "Iran",
+            "abbrev": "IRN",
+            "iso": "ir"
+        },
+        {
+            "id": 7,
+            "name": "USA",
+            "abbrev": "USA",
+            "iso": "us"
+        },
+        {
+            "id": 8,
+            "name": "Wales",
+            "abbrev": "WAL",
+            "iso": "gb-wls"
+        },
+        {
+            "id": 9,
+            "name": "Argentina",
+            "abbrev": "ARG",
+            "iso": "ar"
+        },
+        {
+            "id": 10,
+            "name": "Saudi Arabia",
+            "abbrev": "KSA",
+            "iso": "sa"
+        },
+        {
+            "id": 11,
+            "name": "Mexico",
+            "abbrev": "MEX",
+            "iso": "mx"
+        },
+        {
+            "id": 12,
+            "name": "Poland",
+            "abbrev": "POL",
+            "iso": "pl"
+        },
+        {
+            "id": 13,
+            "name": "France",
+            "abbrev": "FRA",
+            "iso": "fr"
+        },
+        {
+            "id": 14,
+            "name": "Denmark",
+            "abbrev": "DEN",
+            "iso": "dk"
+        },
+        {
+            "id": 15,
+            "name": "Tunisia",
+            "abbrev": "TUN",
+            "iso": "tn"
+        },
+        {
+            "id": 16,
+            "name": "Australia",
+            "abbrev": "AUS",
+            "iso": "au"
+        },
+        {
+            "id": 17,
+            "name": "Spain",
+            "abbrev": "ESP",
+            "iso": "es"
+        },
+        {
+            "id": 18,
+            "name": "Germany",
+            "abbrev": "GER",
+            "iso": "de"
+        },
+        {
+            "id": 19,
+            "name": "Japan",
+            "abbrev": "JPN",
+            "iso": "jp"
+        },
+        {
+            "id": 20,
+            "name": "Costa Rica",
+            "abbrev": "CRC",
+            "iso": "cr"
+        },
+        {
+            "id": 21,
+            "name": "Belgium",
+            "abbrev": "BEL",
+            "iso": "be"
+        },
+        {
+            "id": 22,
+            "name": "Canada",
+            "abbrev": "CAN",
+            "iso": "ca"
+        },
+        {
+            "id": 23,
+            "name": "Morocco",
+            "abbrev": "MAR",
+            "iso": "ma"
+        },
+        {
+            "id": 24,
+            "name": "Croatia",
+            "abbrev": "CRO",
+            "iso": "hr"
+        },
+        {
+            "id": 25,
+            "name": "Brazil",
+            "abbrev": "BRA",
+            "iso": "br"
+        },
+        {
+            "id": 26,
+            "name": "Serbia",
+            "abbrev": "SRB",
+            "iso": "rs"
+        },
+        {
+            "id": 27,
+            "name": "Switzerland",
+            "abbrev": "SUI",
+            "iso": "ch"
+        },
+        {
+            "id": 28,
+            "name": "Cameroon",
+            "abbrev": "CMR",
+            "iso": "cm"
+        },
+        {
+            "id": 29,
+            "name": "Portugal",
+            "abbrev": "POR",
+            "iso": "pt"
+        },
+        {
+            "id": 30,
+            "name": "Ghana",
+            "abbrev": "GHA",
+            "iso": "gh"
+        },
+        {
+            "id": 31,
+            "name": "Uruguay",
+            "abbrev": "URU",
+            "iso": "uy"
+        },
+        {
+            "id": 32,
+            "name": "Korea Republic",
+            "abbrev": "KOR",
+            "iso": "kp"
+        },
+        {
+            "id": 33,
+            "name": "Coca Cola",
+            "abbrev": "C",
+            "iso": ""
+        }
+    ]
+}

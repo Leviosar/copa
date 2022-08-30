@@ -1,32 +1,79 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
+    <v-app-bar
+      app
+      color="primary"
+      dark
+    >
+      <div class="d-flex align-center">
+        Tabela de Figurinhas - Qatar 2022
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn small @click="fill" elevation="0" fab color="primary">
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
+
+      <v-btn small @click="clear" elevation="0" fab color="primary">
+        <v-icon>mdi-delete</v-icon>
+      </v-btn>
+
+      <template v-slot:extension v-if="mobile">
+        <ProgressTop/>
+      </template>
+    </v-app-bar>
+
+
+    <v-main>
+      <router-view/>
+    </v-main>
+
+    <Footer/>
+
+    <Sidecar/>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+import Sidecar from './components/Sidecar.vue'
+import ProgressTop from './components/ProgressTop.vue'
+import Footer from './components/Footer.vue'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+export default {
+  name: 'App',
 
-    &.router-link-exact-active {
-      color: #42b983;
+  components: {
+    Sidecar,
+    Footer,
+    ProgressTop
+  },
+
+  data: () => ({
+    //
+  }),
+
+  computed:{
+    theme(){
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+    },
+    mobile() {
+      return this.$vuetify.breakpoint.xsOnly
     }
+  },
+
+  methods: {
+    clear() {
+      this.$store.dispatch('clearStickers');
+    },
+    fill() {
+      this.$store.dispatch('fillStickers');
+    },
+  },
+
+  created() {
+    this.$store.commit('restore');
   }
-}
-</style>
+};
+</script>
