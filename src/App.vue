@@ -11,6 +11,10 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn small @click="auth" elevation="0" fab color="primary">
+        <v-icon>mdi-google</v-icon>
+      </v-btn>
+
       <v-btn small @click="fill" elevation="0" fab color="primary">
         <v-icon>mdi-plus</v-icon>
       </v-btn>
@@ -40,6 +44,7 @@
 import Sidecar from './components/Sidecar.vue'
 import ProgressTop from './components/ProgressTop.vue'
 import Footer from './components/Footer.vue'
+import GoogleAuthService from './services/auth/google_auth'
 
 export default {
   name: 'App',
@@ -65,15 +70,18 @@ export default {
 
   methods: {
     clear() {
-      this.$store.dispatch('clearStickers');
+      this.$store.dispatch('sticker/clear');
     },
     fill() {
-      this.$store.dispatch('fillStickers');
+      this.$store.dispatch('sticker/fill');
     },
+    auth() {
+      new GoogleAuthService().auth()
+    }
   },
 
   created() {
-    this.$store.commit('restore');
+    this.$store.dispatch('restore');
   }
 };
 </script>

@@ -8,9 +8,9 @@
               :value="value"
               height="30"
               color="secondary"
-          >
-            <span class="white--text">{{ value }} %</span>
-          </v-progress-linear>
+            >
+              <span class="white--text">{{ value }} %</span>
+            </v-progress-linear>
           </v-card>
         </div>
       </v-col>
@@ -22,7 +22,7 @@
 export default {
   computed: {
     value() {
-      let stickers = this.$store.state.stickers;
+      let stickers = this.$store.state.sticker.data;
       return ((stickers.filter(sticker => sticker.status > 0).length / stickers.length) * 100).toFixed(2);
     }
   }

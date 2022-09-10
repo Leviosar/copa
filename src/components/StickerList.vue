@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     stickers() {
-      return this.$store.state.stickers.filter(sticker => sticker.country_id === this.country.id);
+      return this.$store.state.sticker.data.filter(sticker => sticker.country_id === this.country.id);
     }
   }
 }

@@ -17,7 +17,7 @@
 export default {
   computed: {
     value() {
-      let stickers = this.$store.state.stickers;
+      let stickers = this.$store.state.sticker.data;
       return ((stickers.filter(sticker => sticker.status > 0).length / stickers.length) * 100).toFixed(2);
     }
   }

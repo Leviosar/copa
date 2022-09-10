@@ -26,14 +26,11 @@ export default {
     }
   },
   methods: {
-    toggle() {
-      this.$store.dispatch('toggleSticker', this.sticker);
-    },
     add() {
-      this.$store.dispatch('addSticker', this.sticker);
+      this.$store.dispatch('sticker/add', this.sticker);
     },
     remove() {
-      this.$store.dispatch('removeSticker', this.sticker);
+      this.$store.dispatch('sticker/sub', this.sticker);
     },
   },
   computed: {

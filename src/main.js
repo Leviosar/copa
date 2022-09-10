@@ -8,11 +8,14 @@ import countries from './data/countries.json'
 import stickers from './data/stickers.json'
 import "./assets/sass/app.scss";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+import LocalStorage from './services/storage/local'
 
 Vue.config.productionTip = false
 
-store.commit('setCountries', countries)
-store.commit('setStickers', stickers.stickers)
+store.dispatch('config', { driver: new LocalStorage() })
+store.commit('country/set', countries)
+console.log(stickers.stickers)
+store.commit('sticker/set', stickers.stickers)
 
 new Vue({
   router,
