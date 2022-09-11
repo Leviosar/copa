@@ -18,9 +18,7 @@ export default class LocalStorage {
     const name = key.split('/')[0]
     
     const haystack = JSON.parse(localStorage.getItem(name))
-    console.log(id)
     localStorage.setItem(key, JSON.stringify(haystack.map(i => i.id == id ? data : i)))
-    console.log('funcionou')
   }
 
   delete(key) {

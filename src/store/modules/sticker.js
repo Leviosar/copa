@@ -26,16 +26,16 @@ const mutations = {
   add(state, sticker) {
     sticker.status++;
   },
-  remove(state, sticker) {
+  sub(state, sticker) {
     if (sticker.status > 0) {
       sticker.status--;
     }
   },
   clear(state) {
-    state.stickers.forEach(sticker => sticker.status = 0);
+    state.data.forEach(sticker => sticker.status = 0);
   },
   fill(state) {
-    state.stickers.forEach(sticker => sticker.status = 1);
+    state.data.forEach(sticker => sticker.status = 1);
   },
 }
 

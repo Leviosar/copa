@@ -11,9 +11,22 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn small @click="auth" elevation="0" fab color="primary">
+      <v-btn v-if="!$store.state.user.data" small @click="auth" elevation="0" fab color="primary">
         <v-icon>mdi-google</v-icon>
       </v-btn>
+
+      <v-menu v-else offset-y close-on-content-click>
+        <template v-slot:activator="{ on, attrs }">
+          <v-avatar v-bind="attrs" v-on="on" size="32">
+            <v-img no-referrer :src="$store.state.user.data.photoURL"></v-img>
+          </v-avatar>
+        </template>
+        <v-list>
+          <v-list-item @click="logout">
+            <v-list-item-title>Sair</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <v-btn small @click="fill" elevation="0" fab color="primary">
         <v-icon>mdi-plus</v-icon>
@@ -77,6 +90,9 @@ export default {
     },
     auth() {
       new GoogleAuthService().auth()
+    },
+    logout() {
+      new GoogleAuthService().logout()
     }
   },
 

@@ -13,8 +13,9 @@ import LocalStorage from './services/storage/local'
 Vue.config.productionTip = false
 
 store.dispatch('config', { driver: new LocalStorage() })
+store.dispatch('user/listen')
+
 store.commit('country/set', countries)
-console.log(stickers.stickers)
 store.commit('sticker/set', stickers.stickers)
 
 new Vue({

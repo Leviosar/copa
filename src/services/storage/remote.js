@@ -7,7 +7,11 @@ export default class RemoteStorage {
     this.user = user
   }
 
-  write(key, data) {
+  write(key, data, options) {
+    if (options.namespaced) {
+      key = `users/${this.user.uid}/${key}`
+    }
+
     this.driver.write(key, data);
   }
 
@@ -15,12 +19,12 @@ export default class RemoteStorage {
     const mapping = {}
     
     if (options.namespaced) {
-      mapping[`users/${this.user.uid}/${key}`] = data
+      mapping[`/users/${this.user.uid}/${key}`] = data
     } else {
       mapping[key] = data
     }
-    
-    this.driver.update(data)
+
+    this.driver.update(mapping)
   }
 
   get(key) {

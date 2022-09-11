@@ -1,3 +1,5 @@
+import { onAuthStateChanged } from "firebase/auth"
+import Firebase from "../../plugins/firebase"
 import DatabaseService from "../../services/database/firebase_database"
 import RemoteStorage from "../../services/storage/remote"
 
@@ -10,8 +12,11 @@ const mutations = {
   config(state, { driver }) {
     state.driver = driver
   },
-  set(state, user) {
-    state.data = user
+  set(state, { email, displayName, phoneNumber, photoURL, uid }) {
+    state.data = { email, displayName, phoneNumber, photoURL, uid }
+  },
+  clear(state) {
+    state.data = null
   },
   persist(state) {
     state.driver.write(`users/${state.data.uid}`, state.data)
@@ -35,13 +40,25 @@ const actions = {
         commit('sticker/persist', null, { root: true })
       } else { // Otherwise restore data from current user
         const model = snapshot.val()
-        console.log('tinha usuario')
-        console.log(model)
+
         if (model.stickers) {
           commit('sticker/set', model.stickers, { root: true })
         } else {
           commit('sticker/persist', null, { root: true })
         }
+      }
+    })
+  },
+  logout({commit}) {
+    commit('clear')
+    commit('sticker/clear', null, { root: true })
+  },
+  listen({ dispatch }) {
+    onAuthStateChanged(Firebase.auth(), (user) => {
+      if (user) {
+        dispatch('authenticated', user)
+      } else {
+        dispatch('logout')
       }
     })
   }
